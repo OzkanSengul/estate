@@ -2,6 +2,8 @@
 
 .searchBar {
   .type {
+
+
     button {
       padding: 16px 36px;
       border: 1px solid #999;
@@ -59,7 +61,7 @@
         }
       }
 
-      @include sm {
+      @include sm{
         width: auto;
         &:nth-child(2),
         &:nth-child(3) {
@@ -76,7 +78,7 @@
       background-color: #fece51;
       flex: 1;
 
-      @include sm {
+      @include sm{
         padding: 10px;
       }
 
@@ -85,41 +87,5 @@
         height: 24px;
       }
     }
-  }
-}
-
-.cta-button {
-  box-shadow: paleturquoise;
-  outline: 2px solid;
-  color: white;
-  outline-color: white;
-  outline-offset: 0;
-  text-shadow: none;
-  cursor: pointer;
-  font-size: 1rem;
-  line-height: 2.5rem;
-  max-width: 160px;
-  width: 100%;
-  letter-spacing: 0.3rem;
-  font-weight: 600;
-  position: relative;
-  text-decoration: none;
-  text-transform: uppercase;
-  display: flex;
-  justify-content: center;
-  transition: all 200ms cubic-bezier(0.36, 0.63, 0.5, 0.73);
-  padding: 0.5rem 1rem;
-  border-radius: 5px;
-
-  align-items: center;
-  &:hover {
-    box-shadow: lightgray;
-    outline-color: black;
-    outline-offset: 5px;
-    color: #f4bd50;
-  }
-  img {
-    width: 204px;
-    height: 24px;
   }
 }
