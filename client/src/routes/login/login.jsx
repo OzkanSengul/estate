@@ -3,10 +3,15 @@ import { Link } from "react-router-dom";
 import { useState } from "react";
 import apiRequest from "../../lib/apiRequest";
 import { useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { AuthContext } from "../../context/AuthContext";
 
 function Login() {
   const [error, setError] = useState(null);
   const [loginSuccess, setLoginSuccess] = useState(false); // Track login success
+
+  const { updateUser } = useContext(AuthContext);
+
   const nav = useNavigate();
 
   const handleSubmit = async (e) => {
@@ -23,8 +28,9 @@ function Login() {
       if (response.status === 200) {
         setError(null); // Clear error state upon successful login
         setLoginSuccess(true); // Set login success state to true
+        updateUser(response.data.user);
+
         nav("/");
-        localStorage.setItem("user", JSON.stringify(response.data.user));
       }
     } catch (error) {
       setError(error.response.data.error);

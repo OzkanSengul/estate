@@ -8,7 +8,8 @@ export const verifyToken = async (req, res, next) => {
   try {
     const verified = jwt.verify(token, process.env.JWT_SECRET, (err, user) => {
       if (err) return res.status(403).json({ message: "Invalid Token" });
-      req.user = user;
+
+      req.userId = user.id;
       next();
     });
   } catch (error) {
